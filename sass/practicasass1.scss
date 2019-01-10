@@ -1,0 +1,61 @@
+@import "partial/base";
+
+@mixin titulo ($tamano, $peso) {
+    font-size: $tamano;
+    font-weight: $peso;
+}
+
+#textoNegroGrande {
+    @include titulo (32px, 700)
+}
+
+@mixin parrafo ($estilo, $bottom, $color) {
+    font-style: $estilo;
+    margin-bottom: $bottom;
+    color: $color;
+}
+
+#TextoParrafoNegroItalica  {
+    @include parrafo (italic, 10px, black)
+}
+
+@mixin item1 ($indent) {
+    text-indent: $indent;
+}
+
+#li {
+    @include item1 (10px)
+}
+
+@mixin lista ($peso, $color, $display) {
+    font-weight: $peso;
+    color: $color;
+    display: $display;
+}
+
+#highlightedBlackText {
+    @include lista (bold, blue, inline)
+}
+
+@mixin boton ($color, $fondo, $pad, $borde, $alinear) {
+    color: $color;
+    background: $fondo;
+    padding: $pad;
+    -webkit-border-radius: $borde;
+    -ms-border-radius: $borde;
+    -moz-webkit-border-radius: $borde;
+    border-radius: $borde;
+    text-align: $alinear
+}
+
+#nota {
+    @include boton (aqua, blue, 10px, 5px, center)
+}
+
+@mixin lista1 ($fondo) {
+    background: $fondo;
+}
+
+#lista1 {
+    @include lista1 (#FAFAFA)
+}
